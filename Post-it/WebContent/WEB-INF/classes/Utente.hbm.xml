@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="DAO.Utente" table="Utente">
+      <id name="email" type="string" column="Email">
+      </id>
+      <property name="password" column="Password" type="string"></property>
+      <property name="nome" column="Nome" type="string"/>
+      <property name="cognome" column="Cognome" type="string"/>
+     <property name="tipologia" column="Tipologia" type="string"></property>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+.disappear {
+    display: none !important;
+}
+
+.dropdown-menu{
+	margin-right: 50px;
+	padding: 20px;
+	border-radius: 25px 0px 25px 25px;
+}
+
+.popup-gallery{
+	background-color:#CECECE;
+}

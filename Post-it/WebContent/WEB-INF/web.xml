@@ -4,20 +4,4 @@
   <welcome-file-list>
     <welcome-file>jsp/Home.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <servlet-name>Login</servlet-name>
-    <servlet-class>Login</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Login</servlet-name>
-    <url-pattern>/Login</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>Segretaria</servlet-name>
-    <servlet-class>Segretaria</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Segretaria</servlet-name>
-    <url-pattern>/Segretaria</url-pattern>
-  </servlet-mapping>
 </web-app>

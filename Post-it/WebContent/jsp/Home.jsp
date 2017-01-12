@@ -23,7 +23,7 @@
 	<div class="container-fluid">
 		<div class="row no-gutter popup-gallery">
 			<div class="col-lg-4 col-sm-6">
-				<a href="#" class="portfolio-box"> <img
+				<a href="<%=request.getContextPath()%>/Dirigente?action=feedback" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/leggiFeedback.jpg"
 					class="img-responsive" alt="">
 					<div class="portfolio-box-caption">
@@ -34,7 +34,7 @@
 				</a>
 			</div>
 			<div class="col-lg-4 col-sm-6">
-				<a href="#" class="portfolio-box"> <img
+				<a href="<%=request.getContextPath()%>/Dirigente?action=report" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/report.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">
@@ -63,7 +63,7 @@
 				</a>
 			</div>
 			<div class="col-lg-4 col-sm-6">
-				<a href="#" class="portfolio-box"> <img
+				<a href="<%=request.getContextPath()%>/Segretaria?action=reso" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/reso.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">
@@ -82,7 +82,7 @@
 	<div class="container-fluid">
 		<div class="row no-gutter popup-gallery">
 			<div class="col-lg-4 col-sm-6">
-				<a href="#" class="portfolio-box"> <img
+				<a href="<%=request.getContextPath()%>/User?action=feedback" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/feedback.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">

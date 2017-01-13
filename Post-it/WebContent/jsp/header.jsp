@@ -59,29 +59,31 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a id="log"
-						class="dropdown-toggle page-scroll"  data-toggle="dropdown" href="#"> <span
-							class="glyphicon glyphicon-user"></span> login
-					</a>
+					<li id="user" class="dropdown disappear">
+						<a href="#" class="dropdown-toggle page-scroll" data-toggle="dropdown"> 
+							<b id="person"></b>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">I tuoi ordini</a></li>
+							<li><a href="#">I tuoi dati</a></li>
+							<li class="divider"></li>
+							<li><a id="logout" href="#">
+								<span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a id="log" class="dropdown-toggle page-scroll"  data-toggle="dropdown" href="#"> 
+							<span class="glyphicon glyphicon-user"></span> login
+						</a>
 						<ul class="dropdown-menu">
 							<li><input id="mail" class="form-control" placeholder="Username" type=text></li>
 							<br>
 							<li><input id="pass" class="form-control" placeholder="Password" type=password></li>
 							<li class="divider"></li>
 							<li style="text-align:center"><input class="btn btn-default" type=submit id="login" value="login"></li>
-						</ul></li>
-					<li id="user" class="dropdown disappear"><a href="#"
-						class="dropdown-toggle page-scroll" data-toggle="dropdown"> <b
-							id="person"></b> <b class="caret"></b>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a href="#">I tuoi ordini</a></li>
-							<li><a href="#">I tuoi dati</a></li>
-							<li class="divider"></li>
-							<li><a id="logout" href="#"><span
-									class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-						</ul></li>
-					<li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

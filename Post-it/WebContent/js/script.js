@@ -58,6 +58,17 @@ function checkSession() {
 			if (res[0] == "true") {
 				$('#user').toggleClass("disappear");
 				$('#person').html(res[1]);
+				type=res[2];
+				switch(type){
+				case "S":
+					$('#segretaria').toggleClass('disappear');
+					$('#menu').toggleClass('disappear');
+					break;
+				case "D":
+					$('#dirigente').toggleClass('disappear');;
+					$('#menu').toggleClass('disappear');
+					break;
+				}
 				$('#log').toggleClass('disappear');
 			}
 		},
@@ -77,7 +88,14 @@ function logout() {
 		},
 		success : function(data) {
 			$('#user').toggleClass("disappear");
-			prev.toggleClass("disappear");
+			switch(type){
+			case "S":
+				$('#segretaria').toggleClass('disappear');
+				break;
+			case "D":
+				$('#dirigente').toggleClass('disappear');;
+				break;
+			}
 			$('#menu').toggleClass('disappear');
 			$('#log').toggleClass('disappear');
 		},
@@ -110,16 +128,16 @@ function Login() {
 				$('#person').html(res[1]);
 				$('#log').toggleClass('disappear');
 				$('.dropdown.open .dropdown-toggle').dropdown('toggle');
-				switch(res[2]){
+				type=res[2];
+				switch(type){
 				case "S":
-					prev=$('#segretaria');
+					$('#segretaria').removeClass('disappear');
 					break;
 				case "D":
-					prev=$('#dirigente');
+					$('#dirigente').removeClass('disappear');;
 					break;
 				}
 				$('#menu').toggleClass('disappear');
-				prev.removeClass('disappear');
 			} else {
 				alert('username or password invalid')
 			}

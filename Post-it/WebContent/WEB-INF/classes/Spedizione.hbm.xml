@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="model.Spedizione" table="Spedizione">
+      <id name="codice" type="string" column="Codice">
+      </id>
+     <property name="nome" column="Nome" type="string"></property>
+     <property name="cognome" column="Cognome" type="string"></property>
+     <property name="indirizzo" column="Indirizzo" type="string"></property>
+     <property name="corriere" column="Corriere" type="string"></property>
+     <property name="stato" column="Stato" type="string"></property>
+     <property name="dataPrevistaConsegna" column="dataPrevistaConsegna" type="date"></property>
+   </class>
+</hibernate-mapping>

@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name="DAO.Utente" table="Utente">
+   <class name="model.Utente" table="Utente">
       <id name="email" type="string" column="Email">
       </id>
       <property name="password" column="Password" type="string"></property>

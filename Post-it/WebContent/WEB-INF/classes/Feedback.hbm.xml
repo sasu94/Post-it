@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="model.Feedback" table="Feedback">
+      <id name="codice" type="string" column="codiceSpedizione">
+      </id>
+     <property name="argomento" column="Argomento" type="string"></property>
+     <property name="commento" column="Commento" type="string"></property>
+     <property name="data" column="Data" type="timestamp"></property>
+   </class>
+</hibernate-mapping>

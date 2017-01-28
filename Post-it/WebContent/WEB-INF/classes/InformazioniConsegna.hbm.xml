@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="model.InformazioniConsegna" table="InformazioniConsegna">
+      <id name="idSpedizione" type="string" column="idSpedizione">
+      </id>
+     <property name="posizione" column="Posizione" type="string"></property>
+     <property name="informazioni" column="Informazioni" type="string"></property>
+     <property name="data" column="Data" type="date"></property>
+   </class>
+</hibernate-mapping>

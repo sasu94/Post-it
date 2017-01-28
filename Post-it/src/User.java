@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import util.DbConnector;
+
 /**
  * Servlet implementation class User
  */
@@ -47,8 +49,14 @@ public class User extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		switch (request.getParameter("par")) {
+		case "feedback":
+			DbConnector.getInstance().nuovoFeedback(request.getParameter("codice"), request.getParameter("argomento"),
+					request.getParameter("commento"));
+			response.sendRedirect("/Post-it");
+			break;
+
+		}
 	}
 
 	private void forwardOnJsp(HttpServletRequest req, HttpServletResponse resp, String nextJsp)

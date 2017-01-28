@@ -24,6 +24,11 @@
 
    <!-- List of XML mapping files -->
    <mapping resource="Utente.hbm.xml"/>
+   <mapping resource="Feedback.hbm.xml"/>
+   <mapping resource="Spedizione.hbm.xml"/>
+   <mapping resource="Reso.hbm.xml"/>
+   <mapping resource="Giacenza.hbm.xml"/>
+   <mapping resource="InformazioniConsegna.hbm.xml"/>
 
 </session-factory>
 </hibernate-configuration>

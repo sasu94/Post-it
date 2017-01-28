@@ -1,4 +1,4 @@
-package DAO;
+package model;
 
 public class Utente {
 	String email, password, nome, cognome, tipologia;

@@ -1,8 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Feedback {
+public class Feedback implements Serializable {
+	private static final long serialVersionUID = -4565420989246284575L;
 	String codice, argomento, commento;
 	Date data;
 

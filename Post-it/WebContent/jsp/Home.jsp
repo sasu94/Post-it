@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -23,7 +23,7 @@
 	<div class="container-fluid">
 		<div class="row no-gutter popup-gallery">
 			<div class="col-lg-4 col-sm-6">
-				<a href="<%=request.getContextPath()%>/Dirigente?action=feedback" class="portfolio-box"> <img
+				<a href="Dirigente?action=feedback" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/leggiFeedback.jpg"
 					class="img-responsive" alt="">
 					<div class="portfolio-box-caption">
@@ -34,12 +34,23 @@
 				</a>
 			</div>
 			<div class="col-lg-4 col-sm-6">
-				<a href="<%=request.getContextPath()%>/Dirigente?action=report" class="portfolio-box"> <img
+				<a href="Dirigente?action=report" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/report.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">
 						<div class="portfolio-box-caption-content">
 							<div class="project-name">Visualizza Report</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<a href="Dirigente?action=manage" class="portfolio-box"> <img
+					src="img/portfolio/thumbnails/manage.jpg" class="img-responsive"
+					alt="">
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
+							<div class="project-name">Gestisci spedizioni</div>
 						</div>
 					</div>
 				</a>
@@ -52,24 +63,34 @@
 	<div class="container-fluid">
 		<div class="row no-gutter popup-gallery">
 			<div class="col-lg-4 col-sm-6">
-				<a href="<%=request.getContextPath()%>/Segretaria?action=inserimento" class="portfolio-box"><img
+				<a href="Segretaria?action=inserimento" class="portfolio-box"><img
 					src="img/portfolio/thumbnails/inserire.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">
 						<div class="portfolio-box-caption-content">
-							<div class="project-name">inserisci spedizioni</div>
+							<div class="project-name">Inserisci spedizioni</div>
 						</div>
 					</div> 
 				</a>
 			</div>
 			<div class="col-lg-4 col-sm-6">
-				<a href="<%=request.getContextPath()%>/Segretaria?action=reso" class="portfolio-box"> <img
+				<a href="Segretaria?action=reso" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/reso.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">
 						<div class="portfolio-box-caption-content">
-							<div class="project-category text-faded">Category</div>
 							<div class="project-name">Risolvi reso</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<a href="Segretaria?action=ritiro" class="portfolio-box"> <img
+					src="img/portfolio/thumbnails/reso.jpg" class="img-responsive"
+					alt="">
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
+							<div class="project-name">Ritiro reso</div>
 						</div>
 					</div>
 				</a>
@@ -82,13 +103,24 @@
 	<div class="container-fluid">
 		<div class="row no-gutter popup-gallery">
 			<div class="col-lg-4 col-sm-6">
-				<a href="<%=request.getContextPath()%>/User?action=feedback" class="portfolio-box"> <img
+				<a href="User?action=feedback" class="portfolio-box"> <img
 					src="img/portfolio/thumbnails/feedback.jpg" class="img-responsive"
 					alt="">
 					<div class="portfolio-box-caption">
 						<div class="portfolio-box-caption-content">
 							<div class="project-name">Dai un feedback sul nostro
 								servizio</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<a href="User?action=track" class="portfolio-box"> <img
+					src="img/portfolio/thumbnails/Airplanes.jpg" class="img-responsive"
+					alt="">
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
+							<div class="project-name">Traccia la tua spedizione</div>
 						</div>
 					</div>
 				</a>

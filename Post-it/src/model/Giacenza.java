@@ -1,6 +1,9 @@
 package model;
 
-public class Giacenza {
+import java.io.Serializable;
+
+public class Giacenza implements Serializable {
+	private static final long serialVersionUID = 3673922441533620072L;
 	String codice;
 	int giorni;
 

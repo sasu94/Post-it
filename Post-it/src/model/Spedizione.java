@@ -1,8 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Spedizione {
+public class Spedizione implements Serializable {
+	private static final long serialVersionUID = 6612084874015084939L;
 	String codice, stato, nome, cognome, indirizzo, corriere;
 	Date dataPrevistaConsegna;
 

@@ -1,8 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Reso {
+public class Reso implements Serializable {
+	private static final long serialVersionUID = 3093431486778894012L;
 	String codice, causale;
 	Date data;
 

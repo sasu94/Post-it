@@ -14,44 +14,17 @@ $(document).ready(function() {
 		logout();
 	});
 
-	$("#register").click(function(e) {
-		e.preventDefault();
-		register();
-	});
-	
-
 });
 
-
-var b = false;
-
-function register() {
-	$.ajax({
-		type : "POST",
-		url : "Login",
-		datatype : "json",
-		data : {
-			register : JSON.stringify($('#Rnome').val() + ";"
-					+ $('#Rcogn').val() + ";" + $('#Raddr').val() + ";"
-					+ $('#Rmail').val() + ";" + $('#Rpass').val()),
-		},
-		success : function(data) {
-			alert('registrazione completata con successo');
-			$('#register-modal').modal('hide');
-		},
-		fail : function() {
-			alert('niente');
-		}
-	})
-}
 
 function checkSession() {
 	$.ajax({
 		type : "POST",
 		url : "Login",
 		datatype : "json",
+		mimeType: "textPlain",
 		data : {
-			session : JSON.stringify(" "),
+			session : " ",
 		},
 		success : function(data) {
 			var res = data.split(";");
@@ -83,8 +56,9 @@ function logout() {
 		type : "POST",
 		url : "Login",
 		datatype : "json",
+		mimeType: "textPlain",
 		data : {
-			logout : JSON.stringify(" "),
+			logout : " ",
 		},
 		success : function(data) {
 			$('#user').toggleClass("disappear");

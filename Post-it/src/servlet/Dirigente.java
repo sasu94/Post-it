@@ -1,3 +1,4 @@
+package servlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,21 +16,30 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import model.InformazioniConsegna;
-import util.DbConnector;
+import persistence.CorriereDAO;
+import persistence.DbConnector;
+import persistence.FeedbackDAO;
+import persistence.InformazioniConsegnaDAO;
+import persistence.SpedizioneDAO;
 
-/**
- * Servlet implementation class Dirigente
- */
 @WebServlet("/Dirigente")
 public class Dirigente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	FeedbackDAO f;
+	CorriereDAO c;
+	InformazioniConsegnaDAO i;
+	SpedizioneDAO s;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Dirigente() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public void init() {
+		DbConnector instance = DbConnector.getInstance();
+		f = instance.getFeedbackDAO();
+		c = instance.getCorriereDAO();
+		i = instance.getInformazioniConsegnaDAO();
+		s = instance.getSpedizioneDAO();
 	}
 
 	/**
@@ -41,12 +51,17 @@ public class Dirigente extends HttpServlet {
 			throws ServletException, IOException {
 		switch (request.getParameter("action")) {
 		case "report":
-			request.setAttribute("corrieri", DbConnector.getInstance().getCorrieri());
+			request.setAttribute("corrieri", c.getCorrieri());
 			forwardOnJsp(request, response, "/jsp/Report.jsp");
 			break;
 		case "feedback":
-			request.setAttribute("feedback", DbConnector.getInstance().getFeedback());
+			request.setAttribute("feedback", f.getFeedback());
 			forwardOnJsp(request, response, "/jsp/LeggiFeedback.jsp");
+			break;
+		case "manage":
+			request.setAttribute("spedizioni", s.getSpedizioniDaConsegnare());
+			request.setAttribute("corrieri", c.getCorrieriNonAssegnati());
+			forwardOnJsp(request, response, "/jsp/ShippingManager.jsp");
 			break;
 		default:
 			break;
@@ -65,8 +80,8 @@ public class Dirigente extends HttpServlet {
 			DateTime inizio = new DateTime(request.getParameter("dataInizio"));
 			DateTime fine = new DateTime(request.getParameter("dataFine"));
 
-			List<InformazioniConsegna> l = DbConnector.getInstance()
-					.getReportbyCorriere(request.getParameter("corriere"), inizio.toDate(), fine.toDate());
+			List<InformazioniConsegna> l = i.getReportbyCorriere(request.getParameter("corriere"), inizio.toDate(),
+					fine.toDate());
 			JSONArray a = new JSONArray();
 			for (InformazioniConsegna i : l) {
 				JSONObject o = new JSONObject(i);
@@ -76,7 +91,7 @@ public class Dirigente extends HttpServlet {
 		} else if (request.getParameter("tutti") != null) {
 			DateTime inizio = new DateTime(request.getParameter("dataInizio"));
 			DateTime fine = new DateTime(request.getParameter("dataFine"));
-			List<InformazioniConsegna> l = DbConnector.getInstance().getTuttiReport();
+			List<InformazioniConsegna> l = i.getTuttiReport();
 			JSONArray a = new JSONArray();
 			for (InformazioniConsegna i : l) {
 				JSONObject o = new JSONObject(i);
@@ -95,6 +110,33 @@ public class Dirigente extends HttpServlet {
 			}
 			response.getWriter().print(o);
 
+		} else if (request.getParameter("delay") != null) {
+			DateTime newDate = new DateTime(request.getParameter("delay"));
+			JSONObject o = new JSONObject();
+			try {
+				boolean b = newDate.isAfterNow();
+				o.put("bool", b);
+
+				if (b) {
+					boolean giorno = newDate.getDayOfWeek() == 6 || newDate.getDayOfWeek() == 7;
+					o.put("giorno", giorno);
+
+					if (!giorno)
+						s.ritarda(newDate.toDate());
+				}
+
+				response.getWriter().print(o.toString());
+
+			} catch (Exception e) {
+
+			}
+
+		} else if (request.getParameter("par") != null) {
+			String corriere = request.getParameter("cor");
+			for (String string : request.getParameterValues("spedizioni")) {
+				s.assegnaCorriereASpedizione(corriere, string);
+			}
+			response.sendRedirect("Dirigente?action=manage");
 		}
 	}
 

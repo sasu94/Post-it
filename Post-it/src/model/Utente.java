@@ -1,6 +1,9 @@
 package model;
 
-public class Utente {
+import java.io.Serializable;
+
+public class Utente implements Serializable {
+	private static final long serialVersionUID = 4188594253192611809L;
 	String email, password, nome, cognome, tipologia;
 
 	public Utente() {

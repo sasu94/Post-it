@@ -47,6 +47,8 @@ $(document).ready(function() {
 					var a=JSON.parse(d);
 					$.each(a,function(){
 						var i=$(this)[0];
+						if(i.posizione!='')
+							i.posizione=' <a title="Visita su Maps" href="http://maps.google.com/?q='+i.posizione+'">'+i.posizione+'</a>'
 						$('tbody').append($('<tr><td>'+i.idSpedizione+'</td><td>'+i.data+'</td><td>'+i.posizione+'</td><td>'+i.informazioni+'</td></tr>'));
 					})
 				}

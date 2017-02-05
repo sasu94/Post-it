@@ -21,6 +21,16 @@
 	min-height: 200px;
 }
 
+.tracking{
+	margin-top: 80px;
+	margin-bottom: 100px;
+	width: 100%;
+}
+
+.data{
+	margin-top:100px;
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 

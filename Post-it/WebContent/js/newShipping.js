@@ -47,8 +47,9 @@ function controllaData(val){
 		type : "POST",
 		url : "Segretaria",
 		datatype : "json",
+		mimeType: "textPlain",
 		data : {
-			date : JSON.stringify(val),
+			date : val,
 		},
 		success : function(data) {
 			if(data==1)

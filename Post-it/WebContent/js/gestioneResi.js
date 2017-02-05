@@ -24,10 +24,12 @@ function fineReso(e){
 		type : "POST",
 		url : "Segretaria",
 		datatype : "json",
+		mimeType: "textPlain",
 		data : {
-			reso : JSON.stringify(c),
+			reso : c,
 		},
 		success : function(data) {
+			alert('stampo documento');
 			tr.remove();
 		}
 	})
@@ -61,8 +63,9 @@ function fineTutteGiacenze(e){
 			type : "POST",
 			url : "Segretaria",
 			datatype : "json",
+			mimeType: "textPlain",
 			data : {
-				allGiacenze : JSON.stringify(g),
+				allGiacenze : g,
 			},
 			success : function(data) {
 				$('.g').remove();
@@ -80,8 +83,9 @@ function fineTuttiResi(e){
 			type : "POST",
 			url : "Segretaria",
 			datatype : "json",
+			mimeType: "textPlain",
 			data : {
-				allResi : JSON.stringify("resi"),
+				allResi : "resi",
 			},
 			success : function(data) {
 				alert('stampando i documenti');

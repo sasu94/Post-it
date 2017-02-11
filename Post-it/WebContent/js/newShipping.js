@@ -15,11 +15,13 @@ $(document).ready(function(){
 		if($('#end').attr('disabled')!='disabled'){
 			sendToServer();
 			contatti=[]
-			$('#end').attr('disabled','disabled')
+			$('#end').attr('disabled','disabled');
+			$('#add').attr('disabled','disabled')
 		}
 	});
 	$('#data').focusout(function(){
-		controllaData($(this).val());
+		if($(this).val()!='')
+			controllaData($(this).val());
 	});
 	
 	$('#codice').focusout(function(){
@@ -52,11 +54,13 @@ function controllaData(val){
 			date : val,
 		},
 		success : function(data) {
-			if(data==1)
+			if(data==1){
 				alert('la data inserita deve essere successiva alla data odierna');
-			else if(data==2)
+				$('#data').val('');
+			}else if(data==2){
 				alert('la data inserita non deve essere Sabato o Domenica');
-			else
+				$('#data').val('');
+			}else
 				$('#add').removeAttr('disabled');
 		}
 	})

@@ -22,7 +22,7 @@ public class UtenteDAO {
 		Utente u = null;
 		try {
 			tx = session.beginTransaction();
-			u = (Utente) session.createQuery("FROM Utente where Email=:email and Password=:passw")
+			u = (Utente) session.createQuery("FROM Utente where Email=:email and Password=:passw and tipologia!='C'")
 					.setParameter("email", mail).setParameter("passw", password).getSingleResult();
 			tx.commit();
 		} catch (HibernateException e) {
